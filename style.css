@@ -1,0 +1,331 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+html {
+  height:100%;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  background-image: linear-gradient(to right top, #000000 0%, #ffaec9 100%);
+}
+
+/* navbar */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+i {
+	margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+
+
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+}
+.navbar-mainbg{
+	background-color: #000000;
+	padding: 0px;
+}
+#navbarSupportedContent{
+  display:flex;
+	justify-content:center;
+	overflow: hidden;
+	position: relative;
+}
+
+#navbarSupportedContent a{
+  font-family: 'Courier New', Courier, monospace;
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+	margin-right: 10px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #ce518b;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #ffd7f0;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: #ffd7f0;
+	bottom: 10px;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+
+@media(min-width: 992px){
+	.navbar-expand-custom {
+	    -ms-flex-flow: row nowrap;
+	    flex-flow: row nowrap;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	}
+	.navbar-expand-custom .navbar-nav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	.navbar-expand-custom .navbar-toggler {
+	    display: none;
+	}
+	.navbar-expand-custom .navbar-collapse {
+	    display: -ms-flexbox!important;
+	    display: flex!important;
+	    -ms-flex-preferred-size: auto;
+	    flex-basis: auto;
+	}
+}
+
+
+@media (max-width: 991px){
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+	}
+}
+/* navbar ends here */
+
+
+
+  /* ______________________________ GENERAL-SETTINGS ______________________________ */
+  
+  *{margin: 0px; padding: 0px;}
+  
+  .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffd7f0;
+  
+    display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+  }
+  
+  .container-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  
+  .video-player-container{
+    width: 848px;
+    height: 550px;
+    z-index: 2;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .video-container {
+    height: 315px;
+    width: 560px;
+    margin: 0 auto;
+    margin-top: 120px;
+    background-color: black;
+  }
+  
+  #media-video {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+/*   
+  
+  .player-container {
+    height: 40px;
+    width: 560px;
+    background-color: #f6f6f6;
+  } */
+  
+  .play-control, .volume-control {
+    width: 40px;
+    height: 40px;
+    display: table;
+    border-right: 1px solid #dddddd;
+    cursor: pointer;
+    float: left;
+  }
+  
+  .play-button, .volume-button-mute {
+    vertical-align: middle;
+    text-align: center;
+    display: none;
+  }
+  
+  .pause-button, .volume-button {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .play-control .fa {
+    font-size: 0.2em;
+  }
+  
+  .volume-control .fa {
+    font-size: 0.8em;
+  }
+  
+  .indicator {
+    width: 100px;
+    height: 40px;
+    border-right: 1px solid #dddddd;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+      text-align: center;
+      float: left;
+      line-height: 40px;
+  }
+  
+  .progress {
+    width: 425px;
+    height: 40px;
+    float: left;
+  }
+  
+  .progress-background {
+    position: absolute;
+      width: 385px;
+      height: 1px;
+      background-color: black;
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+  
+  .progress-over {
+    position: absolute;
+      width: 160px;
+      height: 1px;
+      background-color: #5e9f62;
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+  
+  .progress-hidden {
+    position: absolute;
+      width: 385px;
+      height: 40px;
+      margin-left: 20px;
+      cursor: pointer;
+  }
+  
+  .fullscreen-button {
+    width: 40px;
+    height: 40px;
+    float: right;
+    display: table;
+    cursor: pointer;
+  }
+  
+  .fullscreen-button i {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px solid #dddddd;
+  }

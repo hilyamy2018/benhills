@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my Baby</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- <script src = "message.js"></script> -->
+
+    <style>
+             
+        body {
+            background-color: pink;
+        }
+        h1,
+        p {
+            font-family: 'Hind', sans-serif;
+        }
+
+        p{
+            text-indent: 50px;
+        }
+
+        h1 {
+            font-weight: 200;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            transition: transform 2s;
+            z-index: 1;
+        }
+
+        .heart > img {
+            width: 50px;
+            height: auto;
+        }
+
+        .message {
+            padding: 10px;
+            background-color: #eee;
+            min-width: 400px;
+            height: 75%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            overflow: hidden;
+            animation-name: openmsg;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            border-radius: 5px;
+        }
+
+        .heart > img:hover {
+            animation-name: beat;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        #messageState {}
+
+        @keyframes beat {
+            0% {
+                width: 50px;
+            }
+            25% {
+                width: 58px;
+            }
+            30% {
+                width: 50px;
+            }
+            50% {
+                width: 45px;
+            }
+            60% {
+                width: 50px;
+            }
+            75% {
+                width: 58px;
+            }
+            100% {
+                width: 50px;
+            }
+        }
+
+        @keyframes openmsg {
+            0% {
+                height: 0px;
+                padding: 0px 20px;
+            }
+            100% {
+                height: 75%;
+                padding: 20px 20px;
+            }
+        }
+
+        @keyframes heartMove {
+            0% {
+                top: 50%
+            }
+            100% {
+                top: 85%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .openNor {
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        .closeNor {
+            animation-direction: reverse;
+            animation-play-state: running;
+        }
+
+        .no-anim {
+            animation: none;
+        }
+
+        .closed {
+            height: 0px;
+            padding: 0px 20px;
+        }
+
+        .bottom {
+            bottom: 5px;
+        }
+
+        .openHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-fill-mode: forwards;
+        }
+
+        .closeHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+        }
+
+        .beating > img {
+            animation-name: beat;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        .openedHer {
+            top: 85%;
+            transform: translate(-50%, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="gallery.html">Gallery</a>
+          </li>
+          <li>
+            <a href="message.html">Message</a>
+          </li>
+        </ul>
+      </nav>
+
+    <div class='container-fluid' style = "display: flex;">
+        <input type="button" style = "color:black;" id="play" value="Click me~~~ to enjoy the experience" onclick="playMusic()" />
+    </div>
+
+
+    <div class="container">
+        <label>
+        <div class="heart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"></img>
+        </div>
+        <input id="messageState" type="checkbox" style="display:none"/>
+        </label>
+        <div class="message">
+            <h1>Hi, my love</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dui ante, venenatis et neque eget, volutpat auctor sem. Phasellus molestie magna quis justo pharetra aliquet. Curabitur tempor efficitur nisl a euismod. Mauris tincidunt lorem vel quam aliquam
+                tincidunt. Nullam sed convallis neque, sit amet scelerisque odio. Proin eu lectus et felis convallis dapibus. Vestibulum facilisis, magna non rutrum gravida, urna ipsum ornare enim, at venenatis sem risus nec est. Mauris enim tortor, rutrum vestibulum
+                cursus eu, efficitur a elit. In maximus mattis euismod. Sed tempus arcu in ultricies condimentum. Vestibulum eu elit quis sapien pulvinar lacinia vitae sit amet augue. Cras massa dolor, egestas sit amet turpis porta, euismod cursus ex. Pellentesque
+                luctus diam eget eros suscipit semper. Sed elementum porta placerat. Cras vulputate justo eros. Aliquam fermentum arcu sed lacus tristique aliquet.</p>
+        </div>
+    </div>
+
+    <script>
+        var hidden = false;
+
+        function playMusic(){
+            var music = new Audio("obsessed.mp3");
+            music.play();
+
+            hidden = !hidden;
+            if(hidden) {
+                document.getElementById('play').style.visibility = 'hidden';
+            } else {
+                document.getElementById('play').style.visibility = 'visible';
+            }
+        }
+
+
+        $("#messageState").on("change", (x) => {
+            $(".message").removeClass("openNor").removeClass("closeNor");
+            if ($("#messageState").is(":checked")) {
+                $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+                $(".heart").removeClass("closeHer").removeClass("openedHer").addClass("openHer");
+                $(".container").stop().animate({"backgroundColor": "#f48fb1"}, 2000);
+                console.log("Abrindo");
+            } else {
+                $(".message").removeClass("no-anim").addClass("closeNor");
+                $(".heart").removeClass("openHer").removeClass("openedHer").addClass("closeHer");
+                $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
+                console.log("fechando");
+            }
+        });
+
+        $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            console.log("Animation End");
+            if ($(".message").hasClass("closeNor"))
+                $(".message").addClass("closed");
+            $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+        });
+
+        $(".heart").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            console.log("Animation End");
+            if (!$(".heart").hasClass("closeHer"))
+                $(".heart").addClass("openedHer").addClass("beating");
+            else
+                $(".heart").addClass("no-anim").removeClass("beating");
+            $(".heart").removeClass("openHer").removeClass("closeHer");
+        });
+    </script>
+</body>
+</html>
